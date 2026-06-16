@@ -1,9 +1,11 @@
-﻿namespace TattooWeb.Application.UseCases.Artists.CreateArtist;
+﻿using TattooWeb.Domain.Enums;
+
+namespace TattooWeb.Application.UseCases.Artists.CreateArtist;
 
 public record CreateArtistCommand(
     string Cpf,
     string Name,
-    string? Specialty,
+    ArtistSpecialty? Specialty,
     string? Bio,
     string? Phone
 );

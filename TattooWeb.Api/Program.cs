@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using TattooWeb.Application.UseCases.Artists.CreateArtist;
+using TattooWeb.Application.UseCases.Artists.DeleteArtist;
+using TattooWeb.Application.UseCases.Artists.GetAllArtists;
+using TattooWeb.Application.UseCases.Artists.GetArtistById;
+using TattooWeb.Application.UseCases.Artists.UpdateArtist;
 using TattooWeb.Domain.Repositories;
 using TattooWeb.Infrastructure.Data;
 using TattooWeb.Infrastructure.Repositories;
@@ -13,7 +17,12 @@ builder.Services.AddDbContext<TattooWebDbContext>(options =>
 
 builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
+
 builder.Services.AddScoped<CreateArtistUseCase>();
+builder.Services.AddScoped<GetAllArtistsUseCase>();
+builder.Services.AddScoped<GetArtistByIdUseCase>();
+builder.Services.AddScoped<UpdateArtistUseCase>();
+builder.Services.AddScoped<DeleteArtistUseCase>();
 
 var app = builder.Build();
 

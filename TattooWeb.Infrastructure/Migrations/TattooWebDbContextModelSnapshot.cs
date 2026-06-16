@@ -124,8 +124,8 @@ namespace TattooWeb.Infrastructure.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("text");
 
-                    b.Property<string>("Specialty")
-                        .HasColumnType("text");
+                    b.Property<int?>("Specialty")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
