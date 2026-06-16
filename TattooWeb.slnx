@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TattooWeb.Api/TattooWeb.Api.csproj" />
+  <Project Path="TattooWeb.Application/TattooWeb.Application.csproj" />
+  <Project Path="TattooWeb.Domain/TattooWeb.Domain.csproj" />
+  <Project Path="TattooWeb.Infrastructure/TattooWeb.Infrastructure.csproj" />
+</Solution>
