@@ -1,9 +1,9 @@
-﻿using TattooWeb.Domain.Entities;
-using TattooWeb.Infrastructure.Data;
+using TattooWeb.Domain.Entities;
+using TattooWeb.Domain.Repositories;
 
 namespace TattooWeb.Application.UseCases.Artists.CreateArtist;
 
-public class CreateArtistUseCase(TattooWebDbContext db)
+public class CreateArtistUseCase(IArtistRepository repository)
 {
     public async Task<Artist> ExecuteAsync(CreateArtistCommand command)
     {
@@ -17,9 +17,6 @@ public class CreateArtistUseCase(TattooWebDbContext db)
             Phone = command.Phone
         };
 
-        db.Artists.Add(artist);
-        await db.SaveChangesAsync();
-
-        return artist;
+        return await repository.AddAsync(artist);
     }
 }

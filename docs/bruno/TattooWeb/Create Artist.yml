@@ -1,0 +1,25 @@
+info:
+  name: Create Artist
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:5266/api/artists
+  body:
+    type: json
+    data: |-
+      {
+        "cpf": "123.456.789-00",
+        "name": "João Silva",
+        "specialty": "Blackwork",
+        "bio": "Tatuador especializado em blackwork com 5 anos de experiência",
+        "phone": "11999999999"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

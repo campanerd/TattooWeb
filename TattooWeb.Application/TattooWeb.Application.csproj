@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TattooWeb.Domain\TattooWeb.Domain.csproj" />
-    <ProjectReference Include="..\TattooWeb.Infrastructure\TattooWeb.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
