@@ -1,0 +1,52 @@
+Table artist {
+  id uuid [pk, default: `gen_random_uuid()`]
+  cpf varchar [unique, not null]
+  name varchar [not null]
+  specialty int [note: '0=Blackwork, 1=Realismo, 2=Aquarela, 3=Geometrico, 4=OldSchool, 5=Mandala, 6=Fineline, 7=Tribal, 8=Japones, 9=Neotradicional']
+  bio varchar
+  phone varchar
+  active boolean [default: true]
+  created_at timestamp [default: `now()`]
+}
+
+Table client {
+  id uuid [pk, default: `gen_random_uuid()`]
+  cpf varchar [unique, not null]
+  name varchar [not null]
+  email varchar [unique, not null]
+  phone varchar
+  allergy varchar
+  created_at timestamp [default: `now()`]
+}
+
+Table service {
+  id uuid [pk, default: `gen_random_uuid()`]
+  name varchar [not null]
+  description varchar
+  duration_minutes int [not null]
+  price decimal [not null]
+  active boolean [default: true]
+}
+
+Table appointment {
+  id uuid [pk, default: `gen_random_uuid()`]
+  client_id uuid [not null, ref: > client.id]
+  artist_id uuid [not null, ref: > artist.id]
+  service_id uuid [not null, ref: > service.id]
+  scheduled_at timestamp [not null]
+  duration_minutes int [not null]
+  status int [not null, note: '0=Pending, 1=Confirmed, 2=Completed, 3=Cancelled']
+  notes varchar
+  created_at timestamp [default: `now()`]
+  updated_at timestamp
+}
+
+Table appointment_history {
+  id uuid [pk, default: `gen_random_uuid()`]
+  appointment_id uuid [not null, ref: > appointment.id]
+  changed_field varchar [not null]
+  previous_value varchar
+  new_value varchar
+  changed_at timestamp [default: `now()`]
+  changed_by varchar
+}
