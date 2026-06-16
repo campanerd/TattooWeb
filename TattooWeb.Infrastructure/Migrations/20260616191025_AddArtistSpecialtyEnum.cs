@@ -10,14 +10,7 @@ namespace TattooWeb.Infrastructure.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<int>(
-                name: "Specialty",
-                table: "Artists",
-                type: "integer",
-                nullable: true,
-                oldClrType: typeof(string),
-                oldType: "text",
-                oldNullable: true);
+            migrationBuilder.Sql(@"ALTER TABLE ""Artists"" ALTER COLUMN ""Specialty"" TYPE integer USING NULL;");
         }
 
         /// <inheritdoc />

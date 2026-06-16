@@ -10,11 +10,11 @@ http:
     type: json
     data: |-
       {
-        "cpf": "123.456.789-00",
-        "name": "João Silva",
-        "specialty": "Blackwork",
-        "bio": "Tatuador especializado em blackwork com 5 anos de experiência",
-        "phone": "11999999999"
+        "cpf": "123.456.777-11",
+        "name": "Carlton Rodrigues",
+        "specialty": 3,
+        "bio": "Profissional com mais de quatro anos de experiência",
+        "phone": "11933333322"
       }
   auth: inherit
 

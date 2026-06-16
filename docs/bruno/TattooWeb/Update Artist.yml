@@ -1,0 +1,26 @@
+info:
+  name: Update Artist
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: http://localhost:5266/api/artists/{{Id_Artist}}
+  body:
+    type: json
+    data: |-
+      {
+        "id": "922b4ba1-1d41-4f7d-b1aa-9bafed99ce1a",
+        "name": "João Silva Atualizado",
+        "specialty": 5,
+        "bio": "Bio atualizada",
+        "phone": "11988888888",
+        "active": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
