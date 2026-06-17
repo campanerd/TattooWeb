@@ -1,0 +1,14 @@
+info:
+  name: GraphQL Update Artist
+  type: graphql
+  seq: 11
+
+graphql:
+  method: POST
+  url: http://localhost:5266/graphql
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

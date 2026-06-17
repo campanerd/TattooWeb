@@ -4,18 +4,26 @@ info:
   seq: 7
 
 graphql:
+  method: POST
   url: http://localhost:5266/graphql
-  body: |-
-    mutation {
-      createArtist(command: {
-        cpf: "777.888.999-00"
-        name: "Maria Tattoo"
-        specialty: BLACKWORK
-        bio: "Especialista em blackwork minimalista"
-        phone: "11922221111"
-      }) {
-        id
-        name
-        specialty
+  body:
+    query: |-
+      mutation {
+        createArtist(command: {
+          cpf: "777.866.999-00"
+          name: "José Rick"
+          specialty: OLD_SCHOOL
+          bio: "Especialista em desenvolvimento"
+          phone: "11922133111"
+        }) {
+          id
+          name
+          specialty
+        }
       }
-    }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

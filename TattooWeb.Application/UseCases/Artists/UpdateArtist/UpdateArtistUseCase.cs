@@ -10,11 +10,11 @@ public class UpdateArtistUseCase(IArtistRepository repository)
         var artist = await repository.GetByIdAsync(command.Id);
         if (artist is null) return null;
 
-        artist.Name = command.Name;
-        artist.Specialty = command.Specialty;
-        artist.Bio = command.Bio;
-        artist.Phone = command.Phone;
-        artist.Active = command.Active;
+        if (command.Name is not null) artist.Name = command.Name;
+        if (command.Specialty is not null) artist.Specialty = command.Specialty;
+        if (command.Bio is not null) artist.Bio = command.Bio;
+        if (command.Phone is not null) artist.Phone = command.Phone;
+        if (command.Active is not null) artist.Active = command.Active.Value;
 
         return await repository.UpdateAsync(artist);
     }

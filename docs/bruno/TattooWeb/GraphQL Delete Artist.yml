@@ -1,22 +1,17 @@
 info:
-  name: GraphQL Get Artists
+  name: GraphQL Delete Artist
   type: graphql
-  seq: 6
+  seq: 9
 
 graphql:
   method: POST
   url: http://localhost:5266/graphql
   body:
     query: |-
-      query {
-        artists {
-          id
-          name
-          specialty
-          phone
-          active
-        }
+      mutation {
+        deleteArtist(id: "5f052bd9-48d4-47e7-b1e5-ac0f6d6375e5")
       }
+  auth: inherit
 
 settings:
   encodeUrl: true

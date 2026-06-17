@@ -1,0 +1,14 @@
+info:
+  name: GraphQL Get Artist by ID
+  type: graphql
+  seq: 9
+
+graphql:
+  method: POST
+  url: http://localhost:5266/graphql
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

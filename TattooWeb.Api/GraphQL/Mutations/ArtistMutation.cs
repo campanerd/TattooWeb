@@ -17,8 +17,11 @@ public class ArtistMutation
         [Service] UpdateArtistUseCase useCase) =>
         await useCase.ExecuteAsync(command);
 
-    public async Task DeleteArtist(
+    public async Task<bool> DeleteArtist(
         Guid id,
-        [Service] DeleteArtistUseCase useCase) =>
+        [Service] DeleteArtistUseCase useCase)
+    {
         await useCase.ExecuteAsync(id);
+        return true;
+    }
 }
