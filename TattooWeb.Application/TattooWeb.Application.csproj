@@ -4,6 +4,11 @@
     <ProjectReference Include="..\TattooWeb.Domain\TattooWeb.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\Clients\DeleteClient\" />
+    <Folder Include="UseCases\Clients\GetAllClients\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
