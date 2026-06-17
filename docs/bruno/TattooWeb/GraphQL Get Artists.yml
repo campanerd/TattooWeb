@@ -1,0 +1,19 @@
+info:
+  name: GraphQL Get Artists
+  type: graphql
+  seq: 6
+
+graphql:
+  url: http://localhost:5266/graphql
+  body: |-
+    query {
+      artists {
+        id
+        name
+        specialty
+        bio
+        phone
+        active
+        createdAt
+      }
+    }

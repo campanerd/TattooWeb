@@ -7,6 +7,8 @@ using TattooWeb.Application.UseCases.Artists.UpdateArtist;
 using TattooWeb.Domain.Repositories;
 using TattooWeb.Infrastructure.Data;
 using TattooWeb.Infrastructure.Repositories;
+using TattooWeb.Api.GraphQL.Queries;
+using TattooWeb.Api.GraphQL.Mutations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,14 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<TattooWebDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services
+    .AddGraphQLServer()
+    .AddQueryType<ArtistQuery>()
+    .AddMutationType<ArtistMutation>()
+    .AddProjections()
+    .AddFiltering()
+    .AddSorting();
 
 builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
@@ -34,5 +44,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapControllers();
+app.MapGraphQL();
 
 app.Run();
