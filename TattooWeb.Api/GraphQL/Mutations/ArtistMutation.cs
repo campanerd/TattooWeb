@@ -5,6 +5,7 @@ using TattooWeb.Domain.Entities;
 
 namespace TattooWeb.Api.GraphQL.Mutations;
 
+[ExtendObjectType("Mutation")]
 public class ArtistMutation
 {
     public async Task<Artist> CreateArtist(

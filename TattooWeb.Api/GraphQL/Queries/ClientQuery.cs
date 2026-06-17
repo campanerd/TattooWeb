@@ -1,14 +1,14 @@
-﻿using TattooWeb.Domain.Entities;
+using TattooWeb.Domain.Entities;
 using TattooWeb.Infrastructure.Data;
 
 namespace TattooWeb.Api.GraphQL.Queries;
 
 [ExtendObjectType("Query")]
-public class ArtistQuery
+public class ClientQuery
 {
     [UseProjection]
     [UseFiltering]
     [UseSorting]
-    public IQueryable<Artist> GetArtists([Service] TattooWebDbContext db) =>
-        db.Artists;
+    public IQueryable<Client> GetClients([Service] TattooWebDbContext db) =>
+        db.Clients;
 }
