@@ -9,7 +9,7 @@ graphql:
   body:
     query: |-
       query {
-        clients(where: { id: { eq: "cole-o-id-aqui" } }) {
+        clients(where: { id: { eq: "7b53ebeb-9fc3-4f3f-924e-c86b50b4134a" } }) {
           id
           cpf
           name

@@ -10,7 +10,7 @@ graphql:
     query: |-
       mutation {
         updateClient(command: {
-          id: "cole-o-id-aqui"
+          id: "7b53ebeb-9fc3-4f3f-924e-c86b50b4134a"
           phone: "11977776666"
           allergy: "Níquel"
         }) {
