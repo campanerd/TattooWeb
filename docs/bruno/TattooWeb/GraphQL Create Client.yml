@@ -1,0 +1,33 @@
+info:
+  name: GraphQL Create Client
+  type: graphql
+  seq: 14
+
+graphql:
+  method: POST
+  url: http://localhost:5266/graphql
+  body:
+    query: |-
+      mutation {
+        createClient(command: {
+          cpf: "111.222.333-44"
+          name: "Ana Paula"
+          email: "ana.paula@email.com"
+          phone: "11988887777"
+          allergy: "Látex"
+        }) {
+          id
+          cpf
+          name
+          email
+          phone
+          allergy
+          createdAt
+        }
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

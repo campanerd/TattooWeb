@@ -1,0 +1,27 @@
+info:
+  name: GraphQL Get Client by ID
+  type: graphql
+  seq: 13
+
+graphql:
+  method: POST
+  url: http://localhost:5266/graphql
+  body:
+    query: |-
+      query {
+        clients(where: { id: { eq: "cole-o-id-aqui" } }) {
+          id
+          cpf
+          name
+          email
+          phone
+          allergy
+          createdAt
+        }
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

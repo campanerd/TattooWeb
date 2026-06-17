@@ -1,0 +1,31 @@
+info:
+  name: GraphQL Update Client
+  type: graphql
+  seq: 15
+
+graphql:
+  method: POST
+  url: http://localhost:5266/graphql
+  body:
+    query: |-
+      mutation {
+        updateClient(command: {
+          id: "cole-o-id-aqui"
+          phone: "11977776666"
+          allergy: "Níquel"
+        }) {
+          id
+          cpf
+          name
+          email
+          phone
+          allergy
+          createdAt
+        }
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
