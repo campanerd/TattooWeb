@@ -1,8 +1,8 @@
-﻿namespace TattooWeb.Application.UseCases.Service.UpdateService;
+﻿namespace TattooWeb.Application.UseCases.Services.UpdateService;
 
 public record UpdateServiceCommand(
     Guid Id,
-    string Cpf,
+    string? Name,
     string? Description,
     int DurationMinutes,
     int Price

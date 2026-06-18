@@ -1,8 +1,8 @@
-﻿namespace TattooWeb.Application.UseCases.Service.CreateService;
+﻿namespace TattooWeb.Application.UseCases.Services.CreateService;
 
 public record CreateServiceCommand
 (
-    string Cpf,
+    string Name,
     string? Description,
     int DurationMinutes,
     int Price
