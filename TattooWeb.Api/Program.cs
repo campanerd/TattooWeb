@@ -1,4 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using TattooWeb.Application.UseCases.Services.CreateService;
+using TattooWeb.Application.UseCases.Services.DeleteService;
+using TattooWeb.Application.UseCases.Services.GetAllServices;
+using TattooWeb.Application.UseCases.Services.UpdateService;
 using TattooWeb.Application.UseCases.Artists.CreateArtist;
 using TattooWeb.Application.UseCases.Artists.DeleteArtist;
 using TattooWeb.Application.UseCases.Artists.GetAllArtists;
@@ -35,6 +39,7 @@ builder.Services
 
 builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
 
 builder.Services.AddScoped<CreateArtistUseCase>();
 builder.Services.AddScoped<GetAllArtistsUseCase>();
@@ -46,6 +51,11 @@ builder.Services.AddScoped<CreateClientUseCase>();
 builder.Services.AddScoped<GetAllClientsUseCase>();
 builder.Services.AddScoped<UpdateClientUseCase>();
 builder.Services.AddScoped<DeleteClientUseCase>();
+
+builder.Services.AddScoped<CreateServiceUseCase>();
+builder.Services.AddScoped<GetAllServicesUseCase>();
+builder.Services.AddScoped<UpdateServiceUseCase>();
+builder.Services.AddScoped<DeleteServiceUseCase>();
 
 var app = builder.Build();
 
