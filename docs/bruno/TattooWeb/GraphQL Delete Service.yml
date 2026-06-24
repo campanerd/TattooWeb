@@ -1,0 +1,19 @@
+info:
+  name: GraphQL Delete Service
+  type: graphql
+  seq: 21
+
+graphql:
+  method: POST
+  url: http://localhost:5266/graphql
+  body:
+    query: |-
+      mutation {
+        deleteService(id: "00000000-0000-0000-0000-000000000000")
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

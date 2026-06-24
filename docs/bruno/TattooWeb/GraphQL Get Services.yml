@@ -1,0 +1,26 @@
+info:
+  name: GraphQL Get Services
+  type: graphql
+  seq: 18
+
+graphql:
+  method: POST
+  url: http://localhost:5266/graphql
+  body:
+    query: |-
+      query {
+        services {
+          id
+          name
+          description
+          durationMinutes
+          price
+          active
+        }
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

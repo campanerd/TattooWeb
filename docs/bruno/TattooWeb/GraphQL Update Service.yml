@@ -1,0 +1,29 @@
+info:
+  name: GraphQL Update Service
+  type: graphql
+  seq: 20
+
+graphql:
+  method: POST
+  url: http://localhost:5266/graphql
+  body:
+    query: |-
+      mutation {
+        updateService(command: {
+          id: "00000000-0000-0000-0000-000000000000"
+          price: 400.00
+        }) {
+          id
+          name
+          description
+          durationMinutes
+          price
+          active
+        }
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,31 @@
+info:
+  name: GraphQL Create Service
+  type: graphql
+  seq: 19
+
+graphql:
+  method: POST
+  url: http://localhost:5266/graphql
+  body:
+    query: |-
+      mutation {
+        createService(command: {
+          name: "Tatuagem Blackwork"
+          description: "Tatuagem em preto sólido com traços marcados"
+          durationMinutes: 120
+          price: 350.00
+        }) {
+          id
+          name
+          description
+          durationMinutes
+          price
+          active
+        }
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
