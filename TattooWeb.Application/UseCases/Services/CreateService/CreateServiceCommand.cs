@@ -5,5 +5,5 @@ public record CreateServiceCommand
     string Name,
     string? Description,
     int DurationMinutes,
-    int Price
+    decimal Price
 );

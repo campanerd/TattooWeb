@@ -30,9 +30,11 @@ builder.Services
     .AddQueryType(d => d.Name("Query"))
     .AddTypeExtension<ArtistQuery>()
     .AddTypeExtension<ClientQuery>()
+    .AddTypeExtension<ServiceQuery>()
     .AddMutationType(d => d.Name("Mutation"))
     .AddTypeExtension<ArtistMutation>()
     .AddTypeExtension<ClientMutation>()
+    .AddTypeExtension<ServiceMutation>()
     .AddProjections()
     .AddFiltering()
     .AddSorting();

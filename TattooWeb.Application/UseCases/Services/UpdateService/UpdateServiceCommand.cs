@@ -4,6 +4,6 @@ public record UpdateServiceCommand(
     Guid Id,
     string? Name,
     string? Description,
-    int DurationMinutes,
-    int Price
+    int? DurationMinutes,
+    decimal? Price
     );
