@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TattooWeb.Infrastructure.Data;
@@ -11,9 +12,11 @@ using TattooWeb.Infrastructure.Data;
 namespace TattooWeb.Infrastructure.Migrations
 {
     [DbContext(typeof(TattooWebDbContext))]
-    partial class TattooWebDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260624130719_SnakeCaseNaming")]
+    partial class SnakeCaseNaming
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
