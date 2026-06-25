@@ -7,6 +7,14 @@ public class CreateClientUseCase(IClientRepository repository)
 {
     public async Task<Client> ExecuteAsync(CreateClientCommand command)
     {
+        var existingCpf = await repository.FindByCpfAsync(command.Cpf);
+        if (existingCpf is not null)
+            throw new InvalidOperationException("A client with this CPF already exists.");
+
+        var existingEmail = await repository.FindByEmailAsync(command.Email);
+        if (existingEmail is not null)
+            throw new InvalidOperationException("A client with this email already exists.");
+
         var client = new Client
         {
             Id = Guid.NewGuid(),

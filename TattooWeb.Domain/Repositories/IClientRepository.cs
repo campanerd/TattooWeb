@@ -6,5 +6,4 @@ public interface IClientRepository : IBaseRepository<Client>
 {
     Task<Client?> FindByCpfAsync(string cpf);
     Task<Client?> FindByEmailAsync(string email);
-    Task<Client?> FindByPhoneAsync(string phone);   
 }

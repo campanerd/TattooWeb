@@ -7,6 +7,10 @@ public class CreateServiceUseCase(IServiceRepository repository)
 {
     public async Task<Service> ExecuteAsync(CreateServiceCommand command)
     {
+        var existing = await repository.FindByNameAsync(command.Name);
+        if (existing is not null)
+            throw new InvalidOperationException("A service with this name already exists.");
+
         var service = new Service
         {
             Id = Guid.NewGuid(),

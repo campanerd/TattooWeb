@@ -30,4 +30,16 @@ public class CreateArtistUseCaseTests
         Assert.Equal(command.Name, result.Name);
         Assert.Equal(command.Cpf, result.Cpf);
     }
+
+    [Fact(DisplayName = "Throws when an artist with the same CPF already exists")]
+    public async Task ExecuteAsync_WithDuplicateCpf_ThrowsInvalidOperation()
+    {
+        // Arrange
+        var command = new CreateArtistCommand("123.456.789-00", "João Silva", null, null, null);
+        _repository.FindByCpfAsync(command.Cpf).Returns(new Artist { Cpf = command.Cpf });
+
+        // Act + Assert
+        await Assert.ThrowsAsync<InvalidOperationException>(() => _useCase.ExecuteAsync(command));
+        await _repository.DidNotReceive().AddAsync(Arg.Any<Artist>());
+    }
 }

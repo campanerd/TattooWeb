@@ -12,7 +12,4 @@ public class ClientRepository(TattooWebDbContext db) : BaseRepository<Client>(db
 
     public async Task<Client?> FindByEmailAsync(string email) =>
         await Db.Clients.FirstOrDefaultAsync(c => c.Email == email);
-
-    public async Task<Client?> FindByPhoneAsync(string phone) =>
-        await Db.Clients.FirstOrDefaultAsync(c => c.Phone == phone);
 }

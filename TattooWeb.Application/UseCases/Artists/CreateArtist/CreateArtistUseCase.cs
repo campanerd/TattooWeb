@@ -7,6 +7,10 @@ public class CreateArtistUseCase(IArtistRepository repository)
 {
     public async Task<Artist> ExecuteAsync(CreateArtistCommand command)
     {
+        var existing = await repository.FindByCpfAsync(command.Cpf);
+        if (existing is not null)
+            throw new InvalidOperationException("An artist with this CPF already exists.");
+
         var artist = new Artist
         {
             Id = Guid.NewGuid(),
