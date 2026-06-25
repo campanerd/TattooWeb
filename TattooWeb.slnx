@@ -3,4 +3,5 @@
   <Project Path="TattooWeb.Application/TattooWeb.Application.csproj" />
   <Project Path="TattooWeb.Domain/TattooWeb.Domain.csproj" />
   <Project Path="TattooWeb.Infrastructure/TattooWeb.Infrastructure.csproj" />
+  <Project Path="TattooWeb.Tests/TattooWeb.Tests.csproj" />
 </Solution>
