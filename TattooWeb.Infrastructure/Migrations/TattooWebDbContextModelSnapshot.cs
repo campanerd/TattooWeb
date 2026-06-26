@@ -154,6 +154,9 @@ namespace TattooWeb.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Cpf")
+                        .IsUnique();
+
                     b.ToTable("artists");
                 });
 
@@ -192,6 +195,12 @@ namespace TattooWeb.Infrastructure.Migrations
                         .HasColumnName("phone");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Cpf")
+                        .IsUnique();
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.ToTable("clients");
                 });

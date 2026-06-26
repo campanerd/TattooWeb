@@ -16,6 +16,18 @@ public class TattooWebDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        
+        modelBuilder.Entity<Artist>()
+            .HasIndex(a => a.Cpf)
+            .IsUnique();
+
+        modelBuilder.Entity<Client>()
+            .HasIndex(c => c.Cpf)
+            .IsUnique();
+
+        modelBuilder.Entity<Client>()
+            .HasIndex(c => c.Email)
+            .IsUnique();
 
         foreach (var entity in modelBuilder.Model.GetEntityTypes())
         {
